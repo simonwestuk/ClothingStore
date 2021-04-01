@@ -1,0 +1,36 @@
+﻿@model ClothingStore.Models.CategoryModel
+
+@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Category Manager";
+}
+
+<form method="post" asp-action="Upsert">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <label asp-for="Name"></label>
+            </div>
+            <div class="col-8">
+                <input asp-for="Name" class="form-control" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-8">
+                @if (Model.Id != 0)
+                {
+                    //AddInPartialforEdit
+                }
+                else
+                {
+                    //AddInPartialforCreate
+                }
+            </div>
+        </div>
+
+
+    </div>
+</form>

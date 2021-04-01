@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30711.63
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClothingStore", "ClothingStore\ClothingStore.csproj", "{88EBD4E8-B3AA-4EC7-A611-3E4615A2C99F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClothingStore", "ClothingStore\ClothingStore.csproj", "{88EBD4E8-B3AA-4EC7-A611-3E4615A2C99F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClothingStoreModels", "ClothingStoreModels\ClothingStoreModels.csproj", "{454D4E8C-B9DA-4081-B601-C03FBD64D4D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClothingStore.Models", "ClothingStoreModels\ClothingStore.Models.csproj", "{454D4E8C-B9DA-4081-B601-C03FBD64D4D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClothingStoreData", "ClothingStoreData\ClothingStoreData.csproj", "{A4CA5EB0-F966-4C00-A85B-9C5344E47C21}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClothingStore.Data", "ClothingStoreData\ClothingStore.Data.csproj", "{A4CA5EB0-F966-4C00-A85B-9C5344E47C21}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
