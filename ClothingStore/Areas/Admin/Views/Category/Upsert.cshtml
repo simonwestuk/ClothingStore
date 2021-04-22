@@ -9,6 +9,7 @@
 <form method="post" asp-action="Upsert">
 
     <div class="container">
+
         <div class="row">
             <div class="col-4">
                 <label asp-for="Name"></label>
@@ -18,15 +19,29 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-8">
+        <div class="row mt-4">
+            <div class="col-8 offset-4">
                 @if (Model.Id != 0)
                 {
-                    //AddInPartialforEdit
+                    <div class="row">
+                        <div class="col">
+                            <button type="submit" class="btn btn-primary form-control" asp-route-id="@Model.Id">Update</button>
+                        </div>
+                        <div class="col">
+                            <a asp-action="Index" class="btn btn-success form-control">Back to List</a>
+                        </div>
+                    </div>
                 }
                 else
                 {
-                    //AddInPartialforCreate
+                    <div class="row">
+                        <div class="col">
+                            <button type="submit" class="btn btn-primary form-control">Create</button>
+                        </div>
+                        <div class="col">
+                            <a asp-action="Index" class="btn btn-success form-control">Back to List</a>
+                        </div>
+                    </div>
                 }
             </div>
         </div>

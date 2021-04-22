@@ -47,10 +47,33 @@ namespace ClothingStore.Areas.Admin.Controllers
 
         //POST
 
-
-
-
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Upsert(CategoryModel category)
+        {
+            if (ModelState.IsValid)
+            {
+                if (category.Id == 0)
+                {
+                    await _db.Categories.AddAsync(category);
+                }
+                else
+                {
+                    _db.Categories.Update(category);
+                }
+                await _db.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(category);
+        }
 
         //API
+
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            var all = _db.Categories;
+            return Json(new { data = all });
+        }
     }
 }
