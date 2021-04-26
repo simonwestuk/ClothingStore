@@ -75,5 +75,23 @@ namespace ClothingStore.Areas.Admin.Controllers
             var all = _db.Categories;
             return Json(new { data = all });
         }
+
+        [HttpDelete]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var cat = await _db.Categories.FindAsync(id);
+
+            if (cat == null)
+            {
+                return Json(new { success = false, message = "Error - Not Found."});  
+            }
+
+            _db.Categories.Remove(cat);
+
+            await _db.SaveChangesAsync();
+
+            return Json(new { success = true, message = "Item Deleted." });
+        }
+
     }
 }
