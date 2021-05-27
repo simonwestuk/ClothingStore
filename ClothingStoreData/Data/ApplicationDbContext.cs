@@ -11,6 +11,8 @@ namespace ClothingStore.Data
     {
         public DbSet<CategoryModel> Categories { get; set; }
 
+        public DbSet<ProductModel> Products { get; set; }
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
