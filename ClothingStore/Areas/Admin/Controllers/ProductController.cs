@@ -35,7 +35,14 @@ namespace ClothingStore.Areas.Admin.Controllers
             ProductViewModel productVM = new ProductViewModel()
             {
                 Product = product,
+
                 CategoryList = _db.Categories.Select(i => new SelectListItem
+                {
+                    Text = i.Name,
+                    Value = i.Id.ToString()
+                }),
+
+                TypeList = _db.Types.Select(i => new SelectListItem
                 {
                     Text = i.Name,
                     Value = i.Id.ToString()
@@ -98,7 +105,7 @@ namespace ClothingStore.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult GetAll()
         {
-            var all = _db.Products.Include("Category");
+            var all = _db.Products.Include("Category").Include("Type");
 
             return Json(new { data = all });
         }

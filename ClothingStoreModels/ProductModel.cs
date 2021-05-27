@@ -24,6 +24,12 @@ namespace ClothingStore.Models
         [ForeignKey("CategoryId")]
         public CategoryModel Category { get; set; }
 
+        [Required]
+        public int TypeId { get; set; }
+
+        [ForeignKey("TypeId")]
+        public TypeModel Type { get; set; }
+
         public string ImageUrl { get; set; }
     }
 }

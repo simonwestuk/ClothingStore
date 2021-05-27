@@ -10,5 +10,7 @@ namespace ClothingStore.Models.ViewModels
         public ProductModel Product { get; set; }
 
         public IEnumerable<SelectListItem> CategoryList { get; set; }
+
+        public IEnumerable<SelectListItem> TypeList { get; set; }
     }
 }

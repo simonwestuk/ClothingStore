@@ -7,26 +7,23 @@ $(document).ready(function () {
 
 
 function loadTableData() {
-     dataTable = $('#prod-data').DataTable({
+     dataTable = $('#type-data').DataTable({
         'ajax': {
-            "url": '/Admin/Product/GetAll'
+            "url": '/Admin/Type/GetAll'
         },
         'columns': [
-            { 'data': 'description', 'width': '20%' },
-            { 'data': 'price', 'width': '20%' },
-            { 'data': 'category.name', 'width': '20%' },
-            { 'data': 'type.name', 'width': '20%' },
+            { 'data': 'name', 'width': '60%' },
             {
                 'data': 'id',
                 'render': function (data) {
                     return `
                             <div class="text-center"> 
-                                <a href="/Admin/Product/Upsert/${data}" class="btn btn-success text-white">Edit</a>
-                                <a onclick=Delete("/Admin/Product/Delete/${data}") class="btn btn-danger text-white">Delete</a>
+                                <a href="/Admin/Type/Upsert/${data}" class="btn btn-success text-white">Edit</a>
+                                <a onclick=Delete("/Admin/Type/Delete/${data}") class="btn btn-danger text-white">Delete</a>
                             </div>
                            `;
                 },
-                'width': '20%'
+                'width': '40%'
             }
         ]
 
@@ -60,7 +57,7 @@ function Delete(url)
             });
             Swal.fire(
                 'Deleted!',
-                'Your product has been deleted.',
+                'Your file has been deleted.',
                 'success'
             )
         }
